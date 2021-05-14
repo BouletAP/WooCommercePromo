@@ -1,0 +1,5 @@
+gulp-private.json
+node_modules/
+woocommerce/
+woocommerce-subscriptions/
+woocommerce-apb-promo/inc/EF04_LoadEventDetails.php
