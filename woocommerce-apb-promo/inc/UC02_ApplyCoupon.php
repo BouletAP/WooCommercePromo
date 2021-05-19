@@ -7,7 +7,7 @@ class UC02_ApplyCoupon {
 
     function init() {        
 
-		//add_filter( 'woocommerce_subscriptions_product_price_string', array($this, 'format_pricing'), 80, 3 );
+		add_filter( 'woocommerce_subscriptions_product_price_string', array($this, 'format_pricing'), 80, 3 );
 
 		// Handle discounts
 		add_filter( 'woocommerce_coupon_get_discount_amount', array($this, 'get_discount_amount'), 10, 5 );
@@ -32,13 +32,17 @@ class UC02_ApplyCoupon {
 			if( strpos($amt, '.') !== FALSE ) {
 				list($free_days, $targeted_sub) = explode('.', trim($amt));
 			}
+
+			
+			// product ID == subs ID ??
+
+			//$subscription_string = str_replace("1 year", "$free_days days", $subscription_string);
+			$subscription_string = "Gratuit {$free_days} jours"; //__("");
 		}
 
 
-		// product ID == subs ID
 
 
-		$subscription_string = str_replace("1 year", "$free_days days", $subscription_string);
 		return $subscription_string;
 	}
 

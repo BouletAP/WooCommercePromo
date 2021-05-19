@@ -10,7 +10,6 @@ class UC01_CreateCoupon {
 		add_filter( 'woocommerce_coupon_discount_types', array($this, 'add_discount_types') );
 
 
-
 		// // Add our recurring product coupon types to the list of coupon types that apply to individual products
 		add_filter( 'woocommerce_product_coupon_types', __CLASS__ . '::filter_product_coupon_types', 10, 1 );
 
