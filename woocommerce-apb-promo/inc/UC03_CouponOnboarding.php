@@ -12,7 +12,6 @@ class UC03_CouponOnboarding {
 		add_action( 'woocommerce_check_cart_items', array($this, 'setup_product_by_coupon'), 10 );
 
 		add_action( 'woocommerce_before_cart', array($this, 'new_coupon_onboarding'), 50 );
-
     }
 
 
@@ -45,9 +44,6 @@ class UC03_CouponOnboarding {
 
 
 			if ( WC()->cart->has_discount( $coupon_code ) ) return;
-
-
-			// if the specific product isnt in the cart, we add it.
 
 			WC()->cart->apply_coupon( $coupon_code );
 		}

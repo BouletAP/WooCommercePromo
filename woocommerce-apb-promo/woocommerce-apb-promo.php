@@ -19,6 +19,7 @@ require_once(__DIR__ . '/inc/CouponModel.php');
 require_once(__DIR__ . '/inc/UC01_CreateCoupon.php');
 require_once(__DIR__ . '/inc/UC02_ApplyCoupon.php');
 require_once(__DIR__ . '/inc/UC03_CouponOnboarding.php');
+require_once(__DIR__ . '/inc/UC04_UpdateSubscriptionTime.php');
 
 
 class WooCommerceAPBPromo {
@@ -30,9 +31,11 @@ class WooCommerceAPBPromo {
 		$uc02 = new UC02_ApplyCoupon();
 		$uc02->init();
 
-
 		$uc03 = new UC03_CouponOnboarding();
 		$uc03->init();
+
+		$uc04 = new UC04_UpdateSubscriptionTime();
+		$uc04->init();
     }    
 }
 if( !isset($wooCommerceAPBPromo) ) {

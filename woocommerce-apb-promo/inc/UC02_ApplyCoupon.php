@@ -7,7 +7,7 @@ class UC02_ApplyCoupon {
 
     function init() {        
 
-		add_filter( 'woocommerce_subscriptions_product_price_string', array($this, 'format_pricing'), 80, 3 );
+		//add_filter( 'woocommerce_subscriptions_product_price_string', array($this, 'format_pricing'), 80, 3 );
 
 		// Handle discounts
 		add_filter( 'woocommerce_coupon_get_discount_amount', array($this, 'get_discount_amount'), 10, 5 );
@@ -134,7 +134,7 @@ class UC02_ApplyCoupon {
 	 */
 	public static function get_discount_amount_for_line_item( $line_item, $discount, $discounting_amount, $single, $coupon ) {
 
-		echo 'get_discount_amount_for_line_item<pre>'; print_r($discount); echo '</pre>'; die();
+		//echo 'get_discount_amount_for_line_item<pre>'; print_r($discount); echo '</pre>'; die();
 
 		if ( ! is_callable( array( $line_item, 'get_order' ) ) ) {
 			return $discount;
